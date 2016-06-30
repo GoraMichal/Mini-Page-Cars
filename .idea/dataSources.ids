@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - samochody@localhost" uuid="a96f31d6-c49f-457c-8dee-0a90c3d8c692">
+    <database-info product="MySQL" version="5.5.43-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="samochody"/>
+    <table name="marki" schema="" catalog="samochody" type="TABLE">
+      <column name="marki_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="marki_nazwa" sqlType="VARCHAR" precision="11" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="marki_id"/>
+      <index name="marki_id" unique="true" columns="marki_id"/>
+    </table>
+    <table name="samochody" schema="" catalog="samochody" type="TABLE">
+      <column name="samochody_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="marki_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="samochody_nazwa" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="samochody_opis" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="samochody_zdjecie" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="samochody_id"/>
+      <index name="samochody_id" unique="true" columns="samochody_id"/>
+      <index name="marki_id" unique="false" columns="marki_id"/>
+    </table>
+    <table name="user" schema="" catalog="samochody" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="login" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="password" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+  </data-source>
+</component>
